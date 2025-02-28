@@ -37,10 +37,10 @@ pipeline{
 
 	        sh """
                  
-            scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@3.89.161.17:/home/ec2-user/tomcat8/webapps/
+            scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@3.89.161.17:/home/ec2-user/tomcat10/webapps/
 
-              ssh ec2-user@3.89.161.17 /home/ec2-user/tomcat8/bin/shutdown.sh
-               ssh ec2-user@3.89.161.17 /home/ec2-user/tomcat8/bin/startup.sh
+              ssh ec2-user@3.89.161.17 /home/ec2-user/tomcat10/bin/shutdown.sh
+               ssh ec2-user@3.89.161.17 /home/ec2-user/tomcat10/bin/startup.sh
             
           
           """
