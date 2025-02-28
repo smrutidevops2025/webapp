@@ -33,7 +33,7 @@ pipeline{
    stage("deploy"){
 	   steps{
 
-      sshagent(['deployment']) {
+      sshagent(['6f5a47d8-a608-42cc-be69-40634162b831']) {
 
 	        sh """
                  
@@ -52,14 +52,14 @@ pipeline{
 		  
 	  }
 
-stage(backup)
-		  {
-  steps{
+// stage(backup)
+// 		  {
+//   steps{
 
-	  nexusArtifactUploader artifacts: [[artifactId: 'idream-it-solutions', classifier: '', file: 'target/myweb.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.idream.webapp', nexusUrl: '3.110.167.8:8080/nexus/', nexusVersion: 'nexus2', protocol: 'http', repository: 'repoR', version: '1.1'
+// 	  nexusArtifactUploader artifacts: [[artifactId: 'idream-it-solutions', classifier: '', file: 'target/myweb.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.idream.webapp', nexusUrl: '3.110.167.8:8080/nexus/', nexusVersion: 'nexus2', protocol: 'http', repository: 'repoR', version: '1.1'
 	  
-  }
+//   }
 	
-}
+// }
 	}
 	}
