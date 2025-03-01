@@ -37,10 +37,10 @@ pipeline{
 
 	        sh """
                  
-            scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@3.89.161.17:/home/ec2-user/tomcat10/webapps/
+            scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@54.87.232.13:/usr/share/nginx/html
 
-              ssh ec2-user@3.89.161.17 /home/ec2-user/tomcat10/bin/shutdown.sh
-               ssh ec2-user@3.89.161.17 /home/ec2-user/tomcat10/bin/startup.sh
+              ssh ec2-user@54.87.232.13 sudo systemctl stop nginx
+               ssh ec2-user@54.87.232.13 sudo systemctl restart nginx
             
           
           """
