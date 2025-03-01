@@ -37,7 +37,8 @@ pipeline{
 
 	        sh """
                  
-            scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@54.87.232.13:/usr/share/nginx/html
+            scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@54.87.232.13:/home/ec2-user/
+	    ssh ec2-user@54.87.232.13 "sudo mv /home/ec2-user/myweb.war /usr/share/nginx/html/"
 
               ssh ec2-user@54.87.232.13 sudo systemctl stop nginx
                ssh ec2-user@54.87.232.13 sudo systemctl restart nginx
